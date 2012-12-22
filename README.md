@@ -61,6 +61,11 @@
         ret: 'return       - docList containing section objects',
         notes: '' } ]
 
+## Tests
+
+    npm install
+    npm test
+
 ## F.A.Q.
 
 * Q: Why not just use JsDoc?
