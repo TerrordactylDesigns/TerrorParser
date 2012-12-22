@@ -158,14 +158,9 @@ function parser(str) {
 /**///
 /**/// Returns
 /**/// return       - docList containing section objects
-var TerrorParser = function(fileContents) {
-  // theres gotta be a correct way to do this.....
-  // seriously if anyone sees this code somehow, please tell me the right way?
-  if (fileContents) {
-    return parser(fileContents)
-  } else {
-    return function(){}
-  }
+var TerrorParser = function() {
+  if (arguments.length > 0)
+    return parser(arguments[0])
 }
 
 module.exports = TerrorParser
