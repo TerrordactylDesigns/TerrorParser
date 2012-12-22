@@ -3,6 +3,8 @@
 
 ### You will most likely never need this in your life.....
 
+[![Build Status](https://secure.travis-ci.org/TerrordactylDesigns/TerrorParser.png)](http://travis-ci.org/TerrordactylDesigns/TerrorParser)
+
 ### My Comment Style:
     /**/// Public: function_name
     /**///
