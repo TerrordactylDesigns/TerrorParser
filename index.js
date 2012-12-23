@@ -16,25 +16,26 @@ var docList = []
     this.ret     = ret      || ''
     this.notes   = notes    || ''
   }
-/**/// Private: startsWith Function
+/**/// Private: startsWith
 /**///
 /**/// Args
 /**/// str      - string to test against
 /**/// pattern  - string pattern to check at beginning of str
 /**///
 /**/// Returns
-/**/// return   - boolean value of startsWith
+/**/// return   - boolean value of pattern match result
 function startsWith(str, pattern) {
   return str.slice(0, pattern.length) == pattern
 }
-/**/// Private: Filters TerrorDoc lines into the correct object locations
+/**/// Private: buildParsed
 /**///
 /**/// Args
 /**/// lines  - array of all lines
 /**/// pos    - array of positions that lines contains the pattern
 /**///
 /**/// Notes
-/**/// note   - fills docList array by building section objects
+/**/// note   - fills docList array by building section objects based on parsing
+/**///          rules
 function buildParsed(lines, pos) {
   // EXAMPLE DOC
   /**/// Public: does_something
@@ -133,13 +134,14 @@ function buildParsed(lines, pos) {
 
   return docList
 }
-/**/// Private: parses each line for TerrorDoc pattern
+/**/// Private: parser
 /**///
 /**/// Args
 /**/// str  - string value of the entire file contents
 /**///
 /**/// Notes
-/**/// Note - sends matching lines to buildParsed
+/**/// Note - parses each line for TerrorDoc pattern and sends matching lines
+/**///        to buildParsed
 function parser(str) {
   var lines = str.split('\n')
     , pos   = []
@@ -151,7 +153,7 @@ function parser(str) {
   else
     return docList
 }
-/**/// Public: Parser Class
+/**/// Public: TerrorParser
 /**///
 /**/// Args
 /**/// fileContents - string of the read file

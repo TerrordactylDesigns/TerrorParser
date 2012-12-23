@@ -17,6 +17,7 @@
     /**///
     /**/// Notes
     /**/// note   - note_about_the_function
+    /**///          notes_can_be_multiline
 
 ### Use:
     var TerrorParser  = require('./index') // Or wherever you sit this
@@ -39,29 +40,30 @@
 ### The Actual Return Array Of TerrorParser's index.js:
 
     [ { privPub: 'Private',
-        name: 'startsWith Function',
+        name: 'startsWith',
         argList:
          [ 'str      - string to test against',
            'pattern  - string pattern to check at beginning of str' ],
-        ret: 'return   - boolean value of startsWith',
+        ret: 'return   - boolean value of pattern match result',
         notes: '' },
       { privPub: 'Private',
-        name: 'Filters TerrorDoc lines into the correct object locations',
+        name: 'buildParsed',
         argList:
          [ 'lines  - array of all lines',
            'pos    - array of positions that lines contains the pattern' ],
         ret: '',
-        notes: 'note   - fills docList array by building section objects' },
+        notes: 'note   - fills docList array by building section objects based on parsing         rules' },
       { privPub: 'Private',
-        name: 'parses each line for TerrorDoc pattern',
+        name: 'parser',
         argList: [ 'str  - string value of the entire file contents' ],
         ret: '',
-        notes: 'Note - sends matching lines to buildParsed' },
+        notes: 'Note - parses each line for TerrorDoc pattern and sends matching lines       to buildParsed' },
       { privPub: 'Public',
-        name: 'Parser Class',
+        name: 'TerrorParser',
         argList: [ 'fileContents - string of the read file' ],
         ret: 'return       - docList containing section objects',
-        notes: '' } ]
+        notes: '' }
+    ]
 
 ## Tests
 
