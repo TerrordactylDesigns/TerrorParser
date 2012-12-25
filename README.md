@@ -24,8 +24,8 @@
     npm install terrorparser
 
 ### Use:
-    var TerrorParser  = require('./index') // Or wherever you sit this
-    // assume its an express site
+    var TerrorParser  = require('terrorparser')
+    // assume its being used in an express site
     /*
      * POST home page.
      */
