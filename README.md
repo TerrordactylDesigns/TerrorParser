@@ -19,6 +19,10 @@
     /**/// note   - note_about_the_function
     /**///          notes_can_be_multiline
 
+### Install
+
+    npm install terrorparser
+
 ### Use:
     var TerrorParser  = require('./index') // Or wherever you sit this
     // assume its an express site
