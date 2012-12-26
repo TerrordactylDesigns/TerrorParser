@@ -1,6 +1,6 @@
 {
   "name": "terrorparser",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "TerrordactylDesigns",
   "description": "Document Generator For My Style Of Doc",
   "contributors": [
@@ -16,7 +16,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "tap": "0.2.x"
+    "tap": "*"
   },
   "scripts": {
     "test": "tap test/index.js"
