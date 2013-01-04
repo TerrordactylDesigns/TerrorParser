@@ -8,8 +8,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 /**/// GLOBALS
-var docList = []
-  , section = function(privPub, name, argList, ret, notes) {
+var section = function(privPub, name, argList, ret, notes) {
     this.privPub = privPub  || ''
     this.name    = name     || ''
     this.argList = argList  || []
@@ -50,7 +49,8 @@ function buildParsed(lines, pos) {
   /**/// Notes
   /**/// note - note_multi_line_requires
   /**///        a_set_of_doc_markers
-  var currentDoc  = null
+  var docList     = []
+    , currentDoc  = null
     , argMark     = false
     , returnMark  = false
     , noteMark    = false
@@ -130,7 +130,7 @@ function buildParsed(lines, pos) {
   /*
     DEBUG
   */
-  console.log(docList)
+  //console.log(docList)
 
   return docList
 }
@@ -151,7 +151,7 @@ function parser(str) {
   if (pos.length > 0)
     return buildParsed(lines, pos)
   else
-    return docList
+    return null
 }
 /**/// Public: TerrorParser
 /**///

@@ -8,7 +8,7 @@ test('test that the parser returns nothing when no patterns match', function(t) 
   var noheader  = fs.readFileSync('./fixtures/noheader.js', 'utf8')
     , parsed    = TerrorParser(noheader)
   // 1
-  t.notOk(parsed.length > 0, 'no matching returns empty')
+  t.notOk(parsed, 'no matching returns null')
   t.end();
 })
 
@@ -36,18 +36,18 @@ test('test that the multiple header parses all sections', function(t) {
   var multiHeader = fs.readFileSync('./fixtures/multiheader.js', 'utf8')
     , parsed      = TerrorParser(multiHeader)
   // 9
-  t.equal(parsed[2].privPub, 'Public', 'Parsed Public')
+  t.equal(parsed[1].privPub, 'Public', 'Parsed Public')
   // 10
-  t.equal(parsed[2].name, 'does_something', 'Parsed Name')
+  t.equal(parsed[1].name, 'does_something', 'Parsed Name')
   // 11
-  t.equal(parsed[2].argList.length, 2, 'Parsed 2 args')
+  t.equal(parsed[1].argList.length, 2, 'Parsed 2 args')
   // 12
-  t.equal(parsed[2].argList[0], 'arg1 - firstArgSecond', 'Parsed first arg from array')
+  t.equal(parsed[1].argList[0], 'arg1 - firstArgSecond', 'Parsed first arg from array')
   // 13
-  t.equal(parsed[2].argList[1], 'arg2 - secondArgSecond', 'Parsed second arg from array')
+  t.equal(parsed[1].argList[1], 'arg2 - secondArgSecond', 'Parsed second arg from array')
   // 14
-  t.equal(parsed[2].ret, 'return - the_return_value', 'Parsed return')
+  t.equal(parsed[1].ret, 'return - the_return_value', 'Parsed return')
   // 15
-  t.equal(parsed[2].notes, 'note - note_multi_line_requires       a_set_of_doc_markers', 'Parsed notes')
+  t.equal(parsed[1].notes, 'note - note_multi_line_requires       a_set_of_doc_markers', 'Parsed notes')
   t.end()
 })
