@@ -37,7 +37,8 @@
       req.addListener("end", function() {
         console.log('[ POST EVENT RECEIVED ]')
         var data = TerrorParser(postData)
-        // Now you have a array of parsed objects
+        // Now you have a array of parsed objects stored in the data var
+        // If there were no TerrorDoc headers data will = null
       })
     })
 
