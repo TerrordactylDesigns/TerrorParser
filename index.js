@@ -88,6 +88,9 @@ function buildParsed(lines, pos) {
             currentDoc.argList.push(argLine.replace('/**/// ',''))
             j++
           }
+        } else {
+          argMark = false
+          i = j - 1
         }
       }
       while (returnMark) {
